@@ -1,19 +1,11 @@
 pipeline {
     agent any
-    tools {
-        nodejs 'NodeJS' // Name of the NodeJS installation from Global Tool Configuration
-    }
     stages {
-        stage('Checkout') {
+        stage('Check Node Version') {
             steps {
-                checkout scm
+                sh 'node -v'
+                sh 'npm -v'
             }
         }
-        stage('Build') {
-            steps {
-                sh 'npm install'
-            }
-        }
-        // Add other stages as needed
     }
 }
