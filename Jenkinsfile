@@ -9,6 +9,12 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage('Check Node and npm Versions') {
+            steps {
+                sh 'node -v'
+                sh 'npm -v'
+            }
+        }
     }
     post {
         success {
